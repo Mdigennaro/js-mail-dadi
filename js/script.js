@@ -86,7 +86,7 @@ if (mailCorretta === true) {
     Sei tu il vincitore siccome il tuo numero è maggiore rispetto a quello del computer.
     `;
    
-  } else if (utenteNum > cpuNum){
+  } else if (utenteNum < cpuNum){
     document.getElementById('winner').innerHTML = 
     `
     Il numero della faccia del tuo dado è ${utenteNum}<br>
