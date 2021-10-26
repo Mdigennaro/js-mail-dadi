@@ -57,15 +57,56 @@ for (let i = 0; i < mail.length; i++) {
   // l'lemento recuperato è uguale a quello ricercato?
   if (mailInserita === mailPresente) {
     mailCorretta = true;
-  };
+  }
   
-};
+}
 
 if (mailCorretta === true) {
   console.log('è presente');
-  document.getElementById(`mail`).innerHTML = `La tua mail è presente nella lista, quindi puoi accedere al contenuto.`;
+  document.getElementById(`mail`).innerHTML = `La tua mail è presente nella lista, quindi puoi accedere al contenuto. <br>`;
+  
+  //Esercizio Gioco dei dadi
+  /*
+  1. Creare numero random utente da 1 a 6
+  2. Creare numero random cpu da 1 a 6
+  3. Stampare dicendo il vincitore
+  */
+  const utenteNum = Math.floor(Math.random()* 6) + 1;
+  const cpuNum = Math.floor(Math.random()* 6) + 1;
+
+  console.log(utenteNum);
+  console.log(cpuNum);
+
+  if (utenteNum > cpuNum) {
+    
+    document.getElementById('winner').innerHTML =
+    `
+    Il numero della faccia del tuo dado è ${utenteNum}<br>
+    Il numero della faccia del dado del computer è ${cpuNum}<br>
+    Sei tu il vincitore siccome il tuo numero è maggiore rispetto a quello del computer.
+    `;
+   
+  } else if (utenteNum > cpuNum){
+    document.getElementById('winner').innerHTML = 
+    `
+    Il numero della faccia del tuo dado è ${utenteNum}<br>
+    Il numero della faccia del dado del computer è ${cpuNum}<br>
+    Il computer è il vincitore siccome il suo numero è maggiore rispetto al tuo.
+    `;
+    
+  }else{
+    document.getElementById('winner').innerHTML = 
+    `
+    Il numero della faccia del tuo dado è ${utenteNum}<br>
+    Il numero della faccia del dado del computer è ${cpuNum}<br>
+    Avete pareggiato siccome il tuo numero è uguale a quello del computer.
+    `;
+  }
+
 }else{
   console.log('non è presente');
   document.getElementById(`mail`).innerHTML = `La tua mail non è presente nella lista, quindi non puoi accedere al contenuto.`;
-};
+}
+
+
 
