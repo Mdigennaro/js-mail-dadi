@@ -42,16 +42,30 @@ const mail = [
 ];
 
 const mailInserita = prompt('Inserisci la tua mail');
+let mailCorretta = false;
+// usiamo una variabile di appoggio
 
+// alla fine del ciclo (dove??) verifichiamo il valore di variabile di appoggio e stampiamo la frase corrispodnente
 
 for (let i = 0; i < mail.length; i++) {
+
+  // abbiamo la i (0, 1, 2, 3, ...)
+
+  // recuperiamo dall'array l'eleemnto nella posizione di i
   const mailPresente = mail[i];
   
-  if (mailInserita !== mailPresente) {
-    console.log('Mail non presente');
-  } 
-  else {
-    console.log('Mail presente');
-  }
+  // l'lemento recuperato è uguale a quello ricercato?
+  if (mailInserita === mailPresente) {
+    mailCorretta = true;
+  };
+  
+};
 
-}
+if (mailCorretta === true) {
+  console.log('è presente');
+  document.getElementById(`mail`).innerHTML = `La tua mail è presente nella lista, quindi puoi accedere al contenuto.`;
+}else{
+  console.log('non è presente');
+  document.getElementById(`mail`).innerHTML = `La tua mail non è presente nella lista, quindi non puoi accedere al contenuto.`;
+};
+
